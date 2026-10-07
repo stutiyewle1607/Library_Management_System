@@ -1,0 +1,19 @@
+name: Library Management System CI
+
+on:
+  push:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify project file
+        run: |
+          echo "Checking Library Management System project..."
+          test -f README.md
+          echo "README.md is present."
+          echo "Library Management System CI check passed."
